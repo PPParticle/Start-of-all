@@ -1,5 +1,5 @@
 #Install clang/llvm
-```shell
+
 $ git clone https://github.com/plctlab/llvm-project.git
 $ cd llvm-project
 $ mkdir build
@@ -14,9 +14,9 @@ $ sudo make install
 $ cmake -DLLVM_TARGETS_TO_BUILD="RISCV" -DLLVM_ENABLE_PROJECTS="clang" -DLLVM_USE_LINKER=gold -G Ninja ../llvm
 $ ninja
 $ sudo cmake --build . --target install
-```
+
 #run test
-```shell
+
 $ /home/qiao_sh_pudong/RISCV/Src/llvm-project/build/bin/clang++  --target=riscv64-unknown-elf -march=rv64gcv1p0 -menable-experimental-extensions --sysroot=/home/qiao_sh_pudong/RISCV/Bin/riscv64/riscv64-unknown-elf --gcc-toolchain=/home/qiao_sh_pudong/RISCV/Bin/riscv64 hello.cpp
 $ spike --isa=rv64gcv pk a.out 
-```
+
